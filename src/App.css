@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;900&family=Merriweather+Sans&family=Roboto:wght@300&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app{
+    width: 292px;
+    height: 90vh;
+    margin: 5vh 0;
+    background: #FFFFFF;
+    box-shadow: 3px -2px 135px -31px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.head{
+    margin: 35px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.head-city{
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 34.5182px;
+    color: #162241;
+    margin-bottom: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.head-cc{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12.3699px;
+    color: #272727;
+    margin-bottom: 15px;
+}
+
+.head-weather{
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #193663;
+}
+
+.logo img{
+    width: 150px;
+    height: 150px;
+}
+
+.temps{
+    margin-top: 45px;
+    width:200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.temp-crr{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 37.7143px;
+    color: #000749;
+}
+
+.temps-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.temp-hl{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11.7857px;
+    color: #000749;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.low{
+    color: #0007498b;
+    margin-left: 10px;
+}
+
+.details{
+    margin-top: 25px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60px;
+}
+
+
+.details-text{
+    font-family: 'Merriweather Sans', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 12.5714px;
+    color: #0a114c;
 }
