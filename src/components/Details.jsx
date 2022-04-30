@@ -18,7 +18,7 @@ const Details = ( {wind, humidity, visibility} ) => {
           </div>
           <div className="details-item">
               <img src={visi} alt="visi" height="20px" />
-              <h2 className="details-text">{visibility/1000}km</h2>
+              <h2 className="details-text">{Math.round(visibility/1000)}km</h2>
           </div>
       </div>
   )

@@ -8,27 +8,46 @@ import './App.css'
 
 const App = () => {
 
-    let [weatherData, setWeatherData] = useState();
+    const Dummy = {
+      name: "City Name",
+      sys : {
+        country: "CC"
+      },
+      weather : [ {
+        main: "main",
+        description: "description",
+        icon: "01d"
+      }],
+      main : {
+        temp : "0",
+        temp_max : "0",
+        temp_min : "0",
+        humidity : "0"
+      },
+      wind : { speed : "0"},
+      visibility : "0"
+    }
+
+    let [weatherData, setWeatherData] = useState(Dummy);
+    let [loc, setLoc] = useState("Surat")
 
     const data = (cityID) => { 
         const key = "09cdd06955959bd440a8fc27bd1f8cb7"
-        fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID+ '&appid=' + key)
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityID+ '&appid=' + key)
             .then(resp => resp.json())
             .then(data => setWeatherData(data))
     }
 
-    window.onload = function() {
-        data(6167865)
-    }
-    
+    console.log(data(loc))
 
   return (
       <div className='app'>
           <Head city={weatherData.name} 
             country={weatherData.sys.country} 
-            details={weatherData.weather[0].main}
+            details={weatherData.weather[0].description}
+            main={weatherData.weather[0].main}
           />
-          <Logo />
+          <Logo icon={weatherData.weather[0].icon}/>
           <Temps 
             data={weatherData.main}
           />

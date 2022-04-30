@@ -14,8 +14,7 @@ body{
 
 .app{
     width: 292px;
-    height: 90vh;
-    margin: 5vh 0;
+    margin: 20px 0;
     background: #FFFFFF;
     box-shadow: 3px -2px 135px -31px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
@@ -49,7 +48,7 @@ body{
     font-weight: 300;
     font-size: 12.3699px;
     color: #272727;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .head-weather{
@@ -58,6 +57,15 @@ body{
     font-weight: 500;
     font-size: 20px;
     color: #193663;
+}
+
+.head-details{
+    margin-top: 3px;
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13.8644px;
+    color: #5F7AA4;
 }
 
 .logo img{
@@ -103,7 +111,7 @@ body{
 }
 
 .details{
-    margin-top: 25px;
+    margin: 25px 0;
     width: 200px;
     display: flex;
     flex-direction: row;
