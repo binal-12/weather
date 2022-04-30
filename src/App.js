@@ -29,7 +29,6 @@ const App = () => {
     }
 
     let [weatherData, setWeatherData] = useState(Dummy);
-    let [loc, setLoc] = useState("Surat")
 
     const data = (cityID) => { 
         const key = "09cdd06955959bd440a8fc27bd1f8cb7"
@@ -38,7 +37,9 @@ const App = () => {
             .then(data => setWeatherData(data))
     }
 
-    console.log(data(loc))
+    window.onload = function() {
+      data("Surat")
+    }
 
   return (
       <div className='app'>
