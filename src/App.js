@@ -28,11 +28,28 @@ const App = () => {
       visibility : "0"
     }
 
+    let lat, long
+
+    function getLocation() {
+      if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+      console.log("Geolocation is not supported by this browser.");
+      }
+  }
+  
+    function showPosition(position) {
+      lat = position.coords.latitude
+      long = position.coords.longitude
+    }
+    
+    getLocation()
+
     let [weatherData, setWeatherData] = useState(Dummy);
 
     const data = (cityID) => { 
         const key = "09cdd06955959bd440a8fc27bd1f8cb7"
-        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityID+ '&appid=' + key)
+        fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=" + key)
             .then(resp => resp.json())
             .then(data => setWeatherData(data))
     }
